@@ -27,7 +27,7 @@ header.masthead {
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;
-  background-size: 100% 160%;
+  background-size: 100% 100%;
 }
 header.masthead .masthead-subheading {
   font-size: 1.5rem;
