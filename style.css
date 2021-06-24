@@ -16,7 +16,15 @@ div {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-
+.jumbotron {
+  color: black;
+  background-image: url("https://hereiskunalverma.github.io/neural-style-transfer-tfjs/header-bg.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-clip: padding-box;
+  background-size: cover;
+  height: 80vh;
+}
 header.masthead {
   padding-top: 5.5rem;
   padding-bottom: 2rem;
