@@ -1,26 +1,5 @@
-/**
+
  * @license
- * Copyright 2018 Reiichiro Nakano All Rights Reserved.
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- * =============================================================================
- */
-
-import 'babel-polyfill';
-import * as tf from '@tensorflow/tfjs';
-tf.ENV.set('WEBGL_PACK', false);  // This needs to be done otherwise things run very slow v1.0.4
-import links from './links';
-
-/**
  * Main application to start on window load
  */
 class Main {
@@ -91,7 +70,7 @@ class Main {
       this.inceptionStyleNet = await tf.loadGraphModel(
         'saved_model_style_inception_js/model.json');
     }
-    
+
     return this.inceptionStyleNet;
   }
 
@@ -153,7 +132,7 @@ class Main {
       const hiddenContext = hiddenCanvas.getContext('2d');
       hiddenCanvas.width = this.webcamVideoElement.width;
       hiddenCanvas.height = this.webcamVideoElement.height;
-      hiddenContext.drawImage(this.webcamVideoElement, 0, 0, 
+      hiddenContext.drawImage(this.webcamVideoElement, 0, 0,
         hiddenCanvas.width, hiddenCanvas.height);
       const imageDataURL = hiddenCanvas.toDataURL('image/jpg');
       element.src = imageDataURL;
@@ -179,7 +158,7 @@ class Main {
     this.styleImgSlider = document.getElementById('style-img-size');
     this.styleImgSquare = document.getElementById('style-img-square');
     this.connectImageAndSizeSlider(this.styleImg, this.styleImgSlider, this.styleImgSquare);
-    
+
     this.styleRatio = 1.0
     this.styleRatioSlider = document.getElementById('stylized-img-ratio');
     this.styleRatioSlider.oninput = (evt) => {
@@ -385,7 +364,7 @@ class Main {
     const bottleneck1 = await tf.tidy(() => {
       return this.styleNet.predict(tf.browser.fromPixels(this.combStyleImg1).toFloat().div(tf.scalar(255)).expandDims());
     })
-    
+
     this.combineButton.textContent = 'Generating 100D style representation of image 2';
     await tf.nextFrame();
     const bottleneck2 = await tf.tidy(() => {
