@@ -340,12 +340,18 @@
 <div class="container">
   <div class="row my-4">
     <div class="col-md-3 offset-md-3">
+      <label for="content-img-size">AI MobileNet Model [Optional]</label>
+      <i class="far fa-question-circle" data-toggle="tooltip" data-placement="top"
+      title="MobileNet model is light and fast but inaccurate. Inceptionv3 Model is efficient but slow and takes a significant time to process."></i>
         <select disabled id="model-select-style" class="centered custom-select">
           <option value="mobilenet" selected="selected">[Fast] Distilled MobileNet style model (9.6MB)</option>
           <option value="inception">[High quality] Original Inceptionv3 style model (36.3MB)</option>
         </select>
     </div>
     <div class="col-md-3">
+      <label for="content-img-size">AI Transformer Model [Optional]</label>
+      <i class="far fa-question-circle" data-toggle="tooltip" data-placement="top"
+      title="Separable_conv2d Transformer Model is light and fast but inaccurate. Original Transformer Model is efficientb but slow and takes a significant time to process."></i>
         <select disabled id="model-select-transformer" class="centered custom-select">
           <option value="separable" selected="selected">[Fast] Separable_conv2d transformer (2.4MB)</option>
           <option value="original">[High quality] Original transformer model (7.9MB)</option>
