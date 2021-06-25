@@ -1,3 +1,8 @@
+import "babel-polyfill";
+import * as tf from "@tensorflow/tfjs";
+tf.ENV.set("WEBGL_PACK", false); // This needs to be done otherwise things run very slow v1.0.4
+import links from "./links";
+
 class Main {
   constructor() {
     if (window.mobilecheck()) {
