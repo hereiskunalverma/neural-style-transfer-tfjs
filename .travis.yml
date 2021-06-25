@@ -18,6 +18,7 @@ script:
   - cp style.css build/style.css
   - cp header-bg.jpg build/header-bg.jpg
   - cp logo_horizontal.png build/logo_horizontal.png
+  - cp favicon.png build/favicon.png
 deploy:
   provider: pages:git
   token: $GITHUB_TOKEN
